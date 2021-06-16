@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="login" method="post">
+        <div class="loginbox trans" id="login">
+            <div>
+                <br>
+                <h1>登&ensp;录</h1>
+                <table>
+                    <tr>
+                        <td>用户名</td>
+                        <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td>密&ensp;&ensp;码</td>
+                        <td><input type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <br>
+                <div id="">
+                    <table>
+                        <tr>
+                            <input type="submit" value="登录">
+                            <br>
+                        </tr>
+                        <tr>
+                            <td><a href="">忘记密码</a></td>
+                            <td><a id="logup-tips" href="./logup.html">新用户注册</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        $.ajax({
+            'url': 'login.php', //#和之前的URL一样，前端把参数传递到什么位置
+            'data': {
+                "UserName": $('#username').val(),
+                "PassWord": $('#password').val(),
+            }, //#前端传递给后端的数据（用户名和密码）
+            'success': function(data) {
+                console.log("登录成功！");
+            }, //#服务器返回数据成功的时候，前端需要如何操作（data中存的就是服务器返回的数据）
+            'type': 'post', //#数据传输的方法
+            'dataType': 'json' //#传递数据的类型，JSON
+        });
+    </script>
+</body>
+
+</html>
