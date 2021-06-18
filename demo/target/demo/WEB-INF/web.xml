@@ -4,10 +4,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
          metadata-complete="false"> <!-- metadata-complete="false" 表示打开注解扫描 -->
+
   <display-name>Archetype Created Web Application</display-name>
+
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
   </welcome-file-list>
+  
+  <!--定义数据源-->
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/Questionnaire</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
   
   <servlet>
     <servlet-name>loginProcess</servlet-name>

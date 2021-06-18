@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/demo">
+    <Resource name="jdbc/Questionnaire" auth="Container" type="javax.sql.DataSource"
+              maxActive="100" maxIdle="30" maxWait="1000" username="zzmdb" password="zzm3305"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/questionnaire"/>
+</Context>
